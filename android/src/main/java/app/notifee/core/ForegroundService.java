@@ -55,18 +55,19 @@ public class ForegroundService extends Service {
   }
 
   static void stop() {
-    Intent intent = new Intent(ContextHolder.getApplicationContext(), ForegroundService.class);
-    intent.setAction(STOP_FOREGROUND_SERVICE_ACTION);
+    stopSelf();
+    // Intent intent = new Intent(ContextHolder.getApplicationContext(), ForegroundService.class);
+    // intent.setAction(STOP_FOREGROUND_SERVICE_ACTION);
 
-    try {
-      // Call start service first with stop action
-      ContextHolder.getApplicationContext().startService(intent);
-    } catch (IllegalStateException illegalStateException) {
-      // try to stop with stopService command
-      ContextHolder.getApplicationContext().stopService(intent);
-    } catch (Exception exception) {
-      Logger.e(TAG, "Unable to stop foreground service", exception);
-    }
+    // try {
+    //   // Call start service first with stop action
+    //   ContextHolder.getApplicationContext().startService(intent);
+    // } catch (IllegalStateException illegalStateException) {
+    //   // try to stop with stopService command
+    //   ContextHolder.getApplicationContext().stopService(intent);
+    // } catch (Exception exception) {
+    //   Logger.e(TAG, "Unable to stop foreground service", exception);
+    // }
   }
 
   @Override
